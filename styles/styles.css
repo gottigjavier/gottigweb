@@ -20,3 +20,7 @@ body {
     height: 5rem;
     white-space: normal;
 }
+
+.portfolio{
+    background-color: #77a8a8 !important;
+}
