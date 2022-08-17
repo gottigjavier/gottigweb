@@ -21,6 +21,13 @@ body {
     white-space: normal;
 }
 
+.resbtn {
+    font-size: 2.5vmax;
+    margin: 1rem 0;
+    height: 5rem;
+    
+}
+
 .portfolio{
     background-color: #77a8a8;
     color: white;
