@@ -8,10 +8,17 @@ body {
 }
 
 .myflag {
-    margin: 1rem 0 0 0;
-    width: 5vmax;
-    height: 3vmax;
+    margin: 1rem 0 0 0.5rem;
+    width: 2.5vmax;
+    height: 1.3vmax;
     white-space: normal;
+}
+
+.myborder {
+    border-bottom: double 4px rgb(111, 255, 147);
+    width: 2.7vmax;
+    height: 1.5vmax;
+
 }
 
 .photo-javier{
