@@ -8,8 +8,8 @@ body {
 }
 
 .photo-javier{
-    width: 20ch;
-    height: 20ch;
+    width: 11vmax;
+    height: 11vmax;
     border-radius: 50%;
     margin: 1rem 1rem 0 0;
 }
