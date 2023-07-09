@@ -10,8 +10,8 @@ body {
 .myflag {
     border-radius: 100%;
     margin: 0 0.5rem;
-    width: 2.5vmax;
-    height: 2.5vmax;
+    width: 2rem;
+    height: 2rem;
 }
 
 .noselectedflag {
