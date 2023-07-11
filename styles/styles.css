@@ -59,6 +59,11 @@ p {
     font-size: 1.1rem;
 }
 
+.mytext {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
 footer{
     position: relative;
     min-width:100%;
