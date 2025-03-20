@@ -29,7 +29,7 @@ body {
 .mybtn-container {
     display: inline-flex;
     position: relative;
-    margin: 2% 0%;
+    margin: 0% 0%;
     width: 100%;
 }
 
@@ -39,6 +39,40 @@ body {
     margin: 1rem 0 0 0;
     width: 7vmax;
     height: 7vmax;
+    white-space: normal;
+}
+
+.mybtn-project-container {
+    display: flex;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    color: aliceblue;
+}
+
+.project-text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0;
+    color:lightgray;
+}
+
+.drone {
+    padding: 1rem 0.5rem 0 0.5rem;
+    font-size: 2vmax;
+    margin: 0 2rem;
+    width: 6vmax;
+    height: 6vmax;
+    white-space: normal;
+}
+
+.digital {
+    padding: 1rem 0.5rem 0 0.5rem;
+    font-size: 2vmax;
+    margin: 0.4rem 2rem;
+    width: 5vmax;
+    height: 5vmax;
     white-space: normal;
 }
 
@@ -71,6 +105,10 @@ footer{
     bottom: 0% !important;
     margin: 13vh 0 0 0 !important;
     padding: 5vh 0 2vh 0;
+}
+
+.footer-text {
+    color:lightgray;
 }
 
 .shdw {
