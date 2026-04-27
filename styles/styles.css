@@ -98,6 +98,29 @@ p {
     font-size: 1.2rem;
 }
 
+.linux-badge {
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+    border-left: 4px solid #ff6600;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.linux-badge h5 {
+    color: #ff6600;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.linux-badge p {
+    color: #f0f0f0;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
 footer {
     position: relative;
     min-width: 100%;
