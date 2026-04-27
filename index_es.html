@@ -1,200 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="./styles/styles.css">
-        <link rel="icon" type="image/x-icon" href="./icons/favicon.ico">
-        <title>Gottig Javier</title>
-    </head>
 
-    <body>
-        <div class="container shdw pt-4">
-            <div class="row justify-content-end mr-1 mb-4">
-                <a  id="flag"
-                    href="index.html"
-                    role="button"
-                    >
-                        <img
-                        src="./icons/usauklang.jpg"
-                        class="myflag noselectedflag"
-                        alt="English Flag"
-                        />
-                </a>
-                <a  id="es_flag"
-                    href="index_es.html"
-                    role="button"
-                    >
-                        <img
-                        src="./icons/spainflag.png"
-                        class="myflag"
-                        alt="Spanish Flag"
-                        />
-                </a>
-            </div>
-            <div class="row myheader">
-                <div>
-                    <img src="./images/fotoCurricIzq.jpg" class="photo-javier float-left" alt="Foto Javier">
-                </div>
-                <div>
-                    <p class="text-white">
-                        Apasionado <i>Desarrollador Junior Full Stack</i> con experiencia 
-                        en el desarrollo de aplicaciones web y ciberseguridad.
-                    </p>
-                    <p class="text-white">
-                        Tercer año de Ingeniería Electrónica me brinda una sólida base de 
-                        conocimientos tanto en <i>matemáticas, física, probabilidad, estadística</i>
-                        como en <i>hardware</i>, además de una <i>impronta autodidacta</i>.
-                    </p>
-                    <p class="text-white">
-                        Domino lenguajes de programación como 
-                        <b>JavaScript</b>, 
-                        <b>Python</b>,
-                        <b>Java</b>,
-                        <b>C++</b>,
-                        <b>Rust</b>, junto con lenguajes de scripting como 
-                        <b>Bash</b>.
-                    </p>
-                    <p class="text-white">
-                        Mis conocimientos se extienden a frameworks populares incluyendo 
-                        <b>React</b>,
-                        <b>Astro</b>, 
-                        <b>Angular</b>, 
-                        <b>Django</b> y 
-                        <b>Springboot</b>. También estoy familiarizado con 
-                        <b>Websockets</b> y 
-                        <b>MQTT</b>, 
-                        <b>Bases de Datos</b>, 
-                        <b>Docker</b>, 
-                        <b>Git</b> y 
-                        <b>Networking (CCST)</b>.
-                    </p>
-                    <p class="text-white">
-                        Siempre estoy aprendiendo nuevas tecnologías para mejorar mis habilidades 
-                        como desarrollador, actualmente ampliando mi experiencia en <b>Hacking Ético</b>,
-                         <b>Análisis de Datos</b> y <b>Machine Learning</b>. 
-                    </p>
-                    <p class="text-white mytext">
-                        <i>Al final del día, programar es una forma 
-                            de ser mejor que mi previo yo.
-                        </i>
-                    </p>
-                    <div class="row justify-content-end mr-2">
-                        <i>
-                            <a title="Envíame un Email" class="text-white mytext" href = "mailto: gottigjavier@gmail.com">Javier Gottig  &#128231; .-</a>
-                        </i>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center mybtn-container">
-                <a  id="linkedin"
-                    href="https://www.linkedin.com/in/javier-gottig-stegmann"
-                    role="button"
-                    target="_blank">
-                    <figure>
-                        <img
-                        src="./icons/linked-in.png"
-                        class="mybtn"
-                        alt="Logotipo de Linkedin"
-                        />
-                        <figcaption class="text-center">Linkedin</figcaption>
-                    </figure>
-                </a>
-                <a  id="curriculum"
-                    href="./cv_files/250320CurriculumES.pdf"
-                    role="button"
-                    target="_blank">
-                    <figure>
-                        <img
-                        src="./icons/PdficonoscreadosporFreepikFlaticon.png"
-                        class="mybtn"
-                        alt="Logotipo de Curriculum"
-                        />
-                        <figcaption class="text-center">Currículum</figcaption>
-                    </figure>
-                </a>
-                <a  id="github"
-                    href="https://github.com/gottigjavier/"
-                    role="button"
-                    target="_blank"
-                    >
-                    <figure>
-                        <img
-                        src="./icons/GitHub0.jpeg"
-                        class="mybtn"
-                        alt="Logotipo de GitHub"
-                        />
-                        <figcaption class="text-center">GitHub</figcaption>
-                    </figure>
-                </a>
-                <a  id="dockerhgub"
-                    href="https://hub.docker.com/u/gottigjavier"
-                    role="button"
-                    target="_blank"
-                    >
-                    <figure>
-                        <img
-                        src="./icons/dockerHub.jpeg"
-                        class="mybtn"
-                        alt="Logotipo de DockerHub"
-                        />
-                        <figcaption class="text-center">DockerHub</figcaption>
-                    </figure>
-                </a>
-                <a  id="youtube"
-                    href="https://www.youtube.com/@gjavier/playlists"
-                    role="button"
-                    target="_blank"
-                    >
-                    <figure>
-                        <img
-                        src="./icons/videos.png"
-                        class="mybtn"
-                        alt="Logotipo de Youtube"
-                        />
-                        <figcaption class="text-center">Youtube</figcaption>
-                    </figure>
-                </a>  
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.ico" />
+    <title>Gottig Javier</title>
+</head>
+
+<body>
+    <div class="container shdw pt-4">
+        <div class="row justify-content-end mr-1 mb-4">
+            <a id="flag" href="index.html" role="button">
+                <img src="./icons/usauklang.jpg" class="myflag noselectedflag" alt="English Flag" />
+            </a>
+            <a id="es_flag" href="index_es.html" role="button">
+                <img src="./icons/spainflag.png" class="myflag" alt="Spanish Flag" />
+            </a>
+        </div>
+        <div class="row myheader">
+            <div>
+                <img src="./images/fotoCurricIzq.jpg" class="photo-javier float-left" alt="Foto Javier" />
             </div>
             <div>
-                <p class="text-center project-text">Últimos Proyectos</p>
+                <p class="text-white">
+                    <i>Desarrollador de soluciones basadas en software</i>
+                    con experiencia en el uso de LLM.
+                <p>
+                    <i>Consultor en Ciberseguridad.</i>
+                </p>
+                <p class="text-white">
+                    La IA es una herramienta.
+                    <i>
+                        La efectividad de la herramienta depende de la
+                        destreza de quien la utiliza.
+                    </i>
+                </p>
+                <p>
+                    Tercer año de Ingeniería Electrónica me brinda una
+                    sólida base de conocimientos tanto en
+                    <i>matemáticas, física, probabilidad, estadística</i>
+                    como en <i>hardware</i>, además de una
+                    <i>impronta autodidacta</i>.
+                </p>
+                <p class="text-white">
+                    Además de <b>Markdown</b>, domino lenguajes de programación
+                    como
+                    <b>JavaScript</b>, <b>Python</b>, <b>Java</b>,
+                    <b>C++</b>, <b>Rust</b>, junto con lenguajes de
+                    scripting como <b>Bash y Fish</b>.
+                </p>
+                <p class="text-white">
+                    Mis conocimientos se extienden a frameworks populares
+                    incluyendo
+                    <b>React, Astro, Angular,
+                    Django y Springboot</b>. También estoy
+                    familiarizado con <b>Websockets y MQTT,
+                    Bases de Datos, Docker, Podman,
+                    Git, Jujutsu y Networking (CCST)</b>.
+                </p>
+                <p class="text-white">
+                    Siempre aprendiendo nuevas tecnologías para mejorar mis
+                    habilidades en solucionar problemas, ampliando mi
+                    experiencia en <b>Hacking Ético</b>,
+                    <b>Análisis de Datos</b> y <b>Machine Learning</b>.
+                </p>
             </div>
-            <div class="row justify-content-center mybtn-project-container">
-                <a  id="jorge"
-                    href="https://dronvideo360.deno.dev"
-                    role="button"
-                    target="_blank">
-                    <figure>
-                        <img
-                        src="./icons/drone.png"
-                        class="drone"
-                        alt="dronvideo360"
-                        />
-                        <figcaption class="text-center">Dron Video 360</figcaption>
-                    </figure>
-                </a>
-                <a  id="william"
-                    href="https://digitalfuture.deno.dev/"
-                    role="button"
-                    target="_blank">
-                    <figure>
-                        <img
-                        src="./icons/globe1.png"
-                        class="digital"
-                        alt="digitalfuture"
-                        />
-                        <figcaption class="text-center">Digital Future</figcaption>
-                    </figure>
-                </a>
+                <p class="text-white mytext">
+                    <i>
+                        Al final del día, el objetivo es ser mejor que mi
+                        previo yo.
+                    </i>
+                </p>
+                <div class="row justify-content-end mr-2">
+                    <i>
+                        <a title="Envíame un Email" class="text-white mytext"
+                            href="mailto: gottigjavier@gmail.com">Javier Gottig &#128231; .-</a>
+                    </i>
+                </div>
             </div>
         </div>
-    </body>
-
-    <footer class="text-center footer-text align-bottom" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="row justify-content-center mybtn-container">
+            <a id="linkedin" href="https://www.linkedin.com/in/javier-gottig-stegmann" role="button" target="_blank">
+                <figure>
+                    <img src="./icons/linked-in.png" class="mybtn" alt="Logotipo de Linkedin" />
+                    <figcaption class="text-center">Linkedin</figcaption>
+                </figure>
+            </a>
+            <a id="github" href="https://github.com/gottigjavier/" role="button" target="_blank">
+                <figure>
+                    <img src="./icons/GitHub0.jpeg" class="mybtn" alt="Logotipo de GitHub" />
+                    <figcaption class="text-center">GitHub</figcaption>
+                </figure>
+            </a>
+            <a id="dockerhgub" href="https://hub.docker.com/u/gottigjavier" role="button" target="_blank">
+                <figure>
+                    <img src="./icons/dockerHub.jpeg" class="mybtn" alt="Logotipo de DockerHub" />
+                    <figcaption class="text-center">DockerHub</figcaption>
+                </figure>
+            </a>
+            <a id="youtube" href="https://www.youtube.com/@gjavier/playlists" role="button" target="_blank">
+                <figure>
+                    <img src="./icons/videos.png" class="mybtn" alt="Logotipo de Youtube" />
+                    <figcaption class="text-center">Youtube</figcaption>
+                </figure>
+            </a>
+        </div>
         <div>
-            © 2025 Copyright:
-            <a title="Envíame un Email" class="text-white" href = "mailto: gottigjavier@gmail.com">Gottig Javier  &#128231;</a>
+            <p class="text-center project-text">Algunos Proyectos deplegados en plataformas gratuitas.</p>
         </div>
-    </footer>
+        <div class="row justify-content-center mybtn-project-container">
+            <a id="jorge" href="https://dronvideo360.deno.dev" role="button" target="_blank">
+                <figure>
+                    <img src="./icons/drone.png" class="drone" alt="dronvideo360" />
+                    <figcaption class="text-center">
+                        Dron Video 360
+                    </figcaption>
+                </figure>
+            </a>
+            <a id="william" href="https://digitalfuture.deno.dev/" role="button" target="_blank">
+                <figure>
+                    <img src="./icons/globe1.png" class="digital" alt="digitalfuture" />
+                    <figcaption class="text-center">
+                        Digital Future
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+</body>
+
+<footer class="text-center footer-text align-bottom" style="background-color: rgba(0, 0, 0, 0.2)">
+    <div>
+        © 2025 Copyright:
+        <a title="Envíame un Email" class="text-white" href="mailto: gottigjavier@gmail.com">Gottig Javier &#128231;</a>
+    </div>
+</footer>
+
 </html>
