@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./styles/propuesta.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="icon" type="image/x-icon" href="./icons/favicon.ico" />
     <title>Javier Gottig | Portfolio</title>
     <meta name="description" content="Software Developer specialized in LLM integration and Cybersecurity." />
@@ -15,8 +15,9 @@
 <body>
     <div class="container">
 
-        <!-- Language flags -->
+        <!-- Theme toggle & Language flags -->
         <div class="row justify-content-end mr-1 mb-4">
+            <button id="theme-toggle" class="theme-toggle mr-2" aria-label="Toggle theme">☀️</button>
             <img id="flag-en" src="./icons/usauklang.jpg" class="myflag selected-flag" alt="English"
                 onclick="switchLang('en')" />
             <img id="flag-es" src="./icons/spainflag.png" class="myflag noselectedflag" alt="Español"
@@ -524,6 +525,26 @@
             document.getElementById('flag-' + lang).classList.remove('noselectedflag');
             document.getElementById('flag-' + lang).classList.add('selected-flag');
         }
+
+        function toggleTheme() {
+            var isLight = document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            document.getElementById('theme-toggle').textContent = isLight ? '\u{1F319}' : '\u{2600}\u{FE0F}';
+        }
+
+        function applySavedTheme() {
+            var saved = localStorage.getItem('theme');
+            var btn = document.getElementById('theme-toggle');
+            if (saved === 'light') {
+                document.body.classList.add('light-mode');
+                btn.textContent = '\u{1F319}';
+            } else {
+                btn.textContent = '\u{2600}\u{FE0F}';
+            }
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        applySavedTheme();
 
         document.querySelectorAll('.project-image').forEach(function (img) {
             img.addEventListener('click', function (e) {
