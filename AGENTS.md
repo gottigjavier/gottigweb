@@ -43,21 +43,21 @@
 ## Local Development
 - **Automation:** None (simple static site)
 - **Convenience:** fish shell for git operations
-- **Dev Mode:** Open `index.html` or `index_es.html` directly in browser, or use local server (`python -m http.server`)
+- **Dev Mode:** Open `/en/index.html` or `/es/index.html` directly in browser, or use local server (`python -m http.server`). Root `index.html` auto-redirects based on browser language.
 
 ## Guardrails
 ### Forbidden
 - Inline styles (`style=` attributes)
 - Inline JavaScript (`<script>` in HTML body)
 - Hardcoding sensitive contact information
-- Breaking bilingual structure (EN: index.html, ES: index_es.html)
+- Breaking bilingual structure (EN: /en/index.html, ES: /es/index.html)
 - Removing Bootstrap CDN integrity attributes
 - Using deprecated HTML elements
 
 ### Mandatory
 - Alt attributes on all `<img>` tags
 - Semantic HTML5 structure (`<header>`, `<main>`, `<footer>` where appropriate)
-- Maintain parallel structure between `index.html` and `index_es.html`
+- Maintain parallel structure between `/en/index.html` and `/es/index.html`
 - Keep styles in `styles/styles.css` (not inline)
 - Update both language versions when changing CV content
 - Use `language_text/languaje.json` for text content management
