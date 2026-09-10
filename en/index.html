@@ -232,7 +232,10 @@
                 <!-- Health -->
                 <div class="col-lg-6 col-md-6 col-12 mb-4">
                     <div class="project-card">
-                        <img src="../images/health.png" class="project-image" alt="Health Monitor screenshot" />
+                        <div class="project-image crossfade">
+                            <img src="../images/health.png" class="crossframe" alt="Health Monitor screenshot" />
+                            <img src="../images/health-sys.png" class="crossframe" alt="Health Monitor system view screenshot" />
+                        </div>
                         <div class="project-body">
                             <span class="status-badge status-ws">WebSocket / MQTT</span>
                             <h3 class="project-title">Health System</h3>
@@ -346,10 +349,10 @@
         document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
         applySavedTheme();
 
-        document.querySelectorAll('.project-image').forEach(function (img) {
+        document.querySelectorAll('img.project-image, .project-image .crossframe').forEach(function (img) {
             img.addEventListener('click', function (e) {
                 e.stopPropagation();
-                document.getElementById('img-preview-src').src = this.src;
+                document.getElementById('img-preview-src').src = img.src;
                 document.getElementById('img-preview').classList.add('show');
             });
         });
