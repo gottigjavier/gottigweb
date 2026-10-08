@@ -338,53 +338,88 @@ p {
   transform: scale(1.03);
 }
 
-/* Crossfade: screenshots alternate every ~5s (12s loop, 2 frames) */
+/* Crossfade: screenshots cycle inside one loop (loop = frames x slot).
+   Every frame shares one keyframes block and gets a staggered delay of
+   (frame - 1) * slot - 0.5s, so it fades in 0.5s before its slot and
+   crossfades with the previous frame. Frames with a positive delay stay
+   at their 0% keyframe (opacity 0) until their slot thanks to
+   animation-fill-mode: backwards.
+   Keyframe offsets are percentages and calc() cannot derive them from
+   the frame count, so each frame count needs its own @keyframes block
+   (slot = 100 / frames %) and its own loop/slot timing below. The count
+   is detected with :has(), so the HTML stays untouched.
+   To support another count: add @keyframes crossfade-N with
+   slot = 100/N % and a matching :has(> .crossframe:nth-child(N)) rule. */
+.project-image.crossfade {
+  --cf-keyframes: crossfade-2; /* fallback when :has() is unsupported */
+  --cf-loop: 12s; /* 2 frames x 6s */
+  --cf-slot: 6s;
+}
+
+.project-image.crossfade:has(> .crossframe:nth-child(7)) {
+  --cf-keyframes: crossfade-7;
+  --cf-loop: 21s; /* 7 frames x 3s */
+  --cf-slot: 3s;
+}
+
 .project-image.crossfade .crossframe {
-  animation-duration: 12s;
-  animation-iteration-count: infinite;
+  --cf-frame: 1;
+  animation-name: var(--cf-keyframes);
+  animation-duration: var(--cf-loop);
   animation-timing-function: linear;
-  animation-delay: -12s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-delay: calc((var(--cf-frame) - 1) * var(--cf-slot) - 0.5s);
 }
 
-.project-image.crossfade .crossframe:first-child {
-  animation-name: crossfade-frame-a;
-}
+.project-image.crossfade .crossframe:nth-child(2) { --cf-frame: 2; }
+.project-image.crossfade .crossframe:nth-child(3) { --cf-frame: 3; }
+.project-image.crossfade .crossframe:nth-child(4) { --cf-frame: 4; }
+.project-image.crossfade .crossframe:nth-child(5) { --cf-frame: 5; }
+.project-image.crossfade .crossframe:nth-child(6) { --cf-frame: 6; }
+.project-image.crossfade .crossframe:nth-child(7) { --cf-frame: 7; }
 
-.project-image.crossfade .crossframe:last-child {
-  animation-name: crossfade-frame-b;
-}
-
-@keyframes crossfade-frame-a {
-  0%,
-  45% {
+/* 2 frames: 6s slot of a 12s loop, 0.5s crossfade */
+@keyframes crossfade-2 {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  4.167% {
     opacity: 1;
     pointer-events: auto;
   }
-  50%,
-  95% {
+  50% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  54.167% {
     opacity: 0;
     pointer-events: none;
   }
   100% {
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
-@keyframes crossfade-frame-b {
-  0%,
-  45% {
+/* 7 frames: 3s slot of a 21s loop, 0.5s crossfade */
+@keyframes crossfade-7 {
+  0% {
     opacity: 0;
     pointer-events: none;
   }
-  50% {
-    opacity: 0;
-    pointer-events: none;
-  }
-  55%,
-  95% {
+  2.381% {
     opacity: 1;
     pointer-events: auto;
+  }
+  14.286% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  16.667% {
+    opacity: 0;
+    pointer-events: none;
   }
   100% {
     opacity: 0;
@@ -395,16 +430,13 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .project-image.crossfade .crossframe {
     animation: none;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .project-image.crossfade .crossframe:first-child {
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .project-image.crossfade .crossframe:last-child {
-    opacity: 0;
-    pointer-events: none;
   }
 }
 
