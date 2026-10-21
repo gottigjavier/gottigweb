@@ -349,11 +349,20 @@ p {
    (slot = 100 / frames %) and its own loop/slot timing below. The count
    is detected with :has(), so the HTML stays untouched.
    To support another count: add @keyframes crossfade-N with
-   slot = 100/N % and a matching :has(> .crossframe:nth-child(N)) rule. */
+   slot = 100/N % and a matching :has(> .crossframe:nth-child(N)) rule.
+   Counts below the highest one must match the frame count EXACTLY
+   (:not(:has(> .crossframe:nth-child(N+1)))), otherwise a container
+   with more frames would inherit the shorter count by cascade order. */
 .project-image.crossfade {
   --cf-keyframes: crossfade-2; /* fallback when :has() is unsupported */
   --cf-loop: 12s; /* 2 frames x 6s */
   --cf-slot: 6s;
+}
+
+.project-image.crossfade:has(> .crossframe:nth-child(3)):not(:has(> .crossframe:nth-child(4))) {
+  --cf-keyframes: crossfade-3;
+  --cf-loop: 9s; /* 3 frames x 3s */
+  --cf-slot: 3s;
 }
 
 .project-image.crossfade:has(> .crossframe:nth-child(7)) {
@@ -394,6 +403,30 @@ p {
     pointer-events: auto;
   }
   54.167% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* 3 frames: 3s slot of a 9s loop, 0.5s crossfade */
+@keyframes crossfade-3 {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  5.556% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  33.333% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  38.889% {
     opacity: 0;
     pointer-events: none;
   }
